@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="CSS/style.css">
+
+        <link rel="icon" type="image/x-icon" href="Slike/proba.png">
+        <title>Zdravniki.si</title>
+    </head>
+    <body onload="load(); loadAdmin();">
+        <!-- Nav -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+        <div class="container">
+            <a href="index.html"><img class="logo" src="Slike/proba.png"></a>
+            <a class="navbar-brand" href="#">ZDRAVNIKI.SI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Domov</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="zdravnik.html">Zdravniki</a>
+                    </li>
+                    <!--
+                    <li class="nav-item">
+                        <a class="nav-link" href="ocena.html">Ocene</a>
+                    </li>
+                    -->
+                    <li class="nav-item" id="login">
+                        <a class="nav-link" href="login.html">Prijava</a>
+                    </li>
+                    <li class="nav-item" id="registracija">
+                        <a class="nav-link" href="registracija.html">Registracija</a>
+                    </li>
+                    <li class="nav-item" id="preveri">
+                        <a class="nav-link" href="preverjanjeIstovetnosti.html">Preveri komentarje</a>
+                    </li>
+                    <li class="nav-item" id="profil" style = "display: none;">
+                        <a class="nav-link" href="moj_profil.html">Moj profil</a>
+                    </li>
+                    <li style="margin-left: 0px;">
+                        <div id="je_prijavljen" ><button onclick="odjavi();" class="btn btn-primary gumb">Odjava</button> 
+                            <!--Pozdravljen <span id="ime_uporabnika"></span>.-->
+                        </div>
+                        <div id="ni_prijavljen"></div>
+                    </li>
+                </ul>
+              </div>
+        </div>
+        </nav>
+
+        <!-- Cover -->
+        <section id="hero" class="text-white text-center overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>DOBRODOŠLI NA URADNI SPLETNI STRANI ISKALNIKA</h5>
+                        <h1 class="display-3 my-4">ZDRAVNIKI.SI</h1> 
+                    </div> 
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="box1 text-dark py-2">
+                            <form action="http://127.0.0.1:5500/Design/rezultatiIskanja.html" method="get">
+                                <label for="specializacija">SPECIALIZACIJA:</label>
+                                    <select name="specializacija" id="specializacija">
+                                        <option value="nic"></option>
+                                        <option value="okulist">Okulist</option>
+                                        <option value="dermatolog">Dermatolog</option>
+                                        <option value="splošni zdravnik">Splošni zdravnik</option>
+                                        <option value="zobozdravnik">Zobozdravnik</option>
+                                        <option value="ginekolog">Ginekolog</option>
+                                        <option value="ortodont">Ortodont</option>
+                                    </select>
+                                <label for="lokacija">LOKACIJA:</label>
+                                    <select name="lokacija" id="lokacija">
+                                        <option value="nic"></option>
+                                        <option value="Ljubljana">Ljubljana</option>
+                                        <option value="Maribor">Maribor</option>
+                                        <option value="Celje">Celje</option>
+                                        <option value="Ptuj">Ptuj</option>
+                                        <option value="Portorož">Portorož</option>
+                                        <option value="Novo Mesto">Novo mesto</option>
+                                        <option value="Bled">Bled</option>
+                                        <option value="Murska Sobota">Murska Sobota</option>
+                                    </select>
+                                <label for="imepriimek">ZDRAVNIK:</label>
+                                    <input class="search" type="text" placeholder="Ime in priimek..." name="ime">
+                                <label for="izvajanje">IZVAJANJE:</label>
+                                    <select name="izvajanje" id="izvajanje">
+                                        <option value="vseeno">Vseeno</option>
+                                        <option value="javno">Javno</option>
+                                        <option value="zasebno">Zasebno</option> 
+                                <input class="btn btn-primary gumb" type="submit" value="POIŠČI" onclick="filtriraj()";>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="text-center bg-secondary p-2 text-dark bg-opacity-10">
+            </br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 intro mx-auto">
+                        <h1>O nas</h1>
+                        <div class="divider"></div>
+                        <p>Ste ob selitvi v novi kraj ali nezadovoljstvu s trenutnim osebnim zdravnikom
+                            kdaj postavljeni pred izziv iskanja novega osebnega zdravnika? Ne veste kateri 
+                            osebni zdravnik je primeren za vas, ali vsaj ni najslabši v okolici? Ne skrbet, 
+                            saj ste na pravem mestu!
+                        </p>
+                        <p>Smo Zdravniki.si, prva slovenska platforma za lažje iskanje in ocenjevanje osebnih zdravnikov.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="info-box py-5 px-4 bg-white">
+                            <img class="info" src="Slike/lokacija.png">
+                            <h5 class="mb-3">LOKACIJA</h5>
+                            <p>Želite poiskat najboljsega zdravnika v vaši bližini? </br> Poiščite po vaših izbranih kriterijih in lokaciji ter si dobrega zdravnika zagotovite, tudi če se preselite.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="info-box py-5 px-4 bg-white">
+                            <img class="info" src="Slike/specializacija.png">
+                            <h5 class="mb-3">SPECIALIZACIJA</h5>
+                            <p>Omogočamo filtriranje in iskanje zdravnikov vseh vrst specializacij (okulist, dermatolog, splošni zdravnik, zobozdravnik, ...).</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 ">
+                        <div class="info-box py-5 px-4 bg-white">
+                            <img class="info" src="Slike/ocena.png">
+                            <h5 class="mb-3">OCENA IN KOMENTAR</h5>
+                            <p>Izberite svojega najljubšega zdravnika na podlagi mnenj drugih uporabnikov in delite vaše iskušnje slovenskega zdravstva z nami.</p>
+                        </div>
+                    </div>
+                </div>
+            </br>
+        </section>
+
+        <!-- Milestone -->
+        <section id="milestone" class="overlay text-white text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="counter">
+                            <div class="number h1">12K+</div>
+                            <div class="divider"></div>
+                            <h6>Uporabnikov</h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="counter">
+                            <div class="number h1">100+</div>
+                            <div class="divider"></div>
+                            <h6>Priznanih zdravnikov</h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="counter">
+                            <div class="number h1">27</div>
+                            <div class="divider"></div>
+                            <h6>Različnih lokacij</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Login -->
+        <section id="login" class="text-center bg-secondary p-2 text-dark bg-opacity-10">
+            </br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 intro mx-auto">
+                        <h1>Prijavi se</h1>
+                        <div class="divider"></div>
+                        <p>Brezplačna registracija in prijava na našo spletno stran vam prinaša mnogo funkcionalnosti, katerih ne želite zamuditi. Registrirajte se že danes!</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center text-light p-2">
+                    <div class="col-md-4">
+                        <div class="login py-5 px-3">
+                            <h6>Registracija</h6>
+                            <h2>Brezplačna</h2>
+                            <ul class="my-5">
+                                <li>Pregled zdravnikov v okolici</li>
+                                <li>Ocenjevanje zdravnikov</li>
+                                <li>Pisanje komentarjev o </br> izkušnjah z zdravniki</li>
+                                <li>Filtriranje po parametrih</li>
+                                <li>Izpis prostih mest na </br> zemljevid</li>
+                            </ul>
+                            <button class="btn btn-light">
+                                <a class="aBtn" href="registracija.html">Registriraj se</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </br>
+        </section>
+
+        <footer class="text-center py-5 bg-dark text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div>
+                            <a href="index.html">Domov</a>
+                            <a href="zdravnik.html">Seznam zdravnikov</a>
+                            <a href="ocena.html">Podrobnosti zdravnikov</a>
+                            <a href="preverjanjeIstovetnosti.html" id="preveri2">Preveri komentarje</a>
+                            <a href="login.html" id="login2">Prijava</a>
+                            <a href="registracija.html" id="registracija2">Registracija</a>
+                        </div>
+                        <p class="mb-0 py-3">Copyright 2022 © Designed by Zdravnice ITK. All rights reserved.</p>
+                        <div>
+                            <a href="https://www.facebook.com/najzdravnik">Facebook</a>
+                            <a href="https://www.instagram.com/mladizdravnikislovenije/">Instagram</a>
+                            <a href = "mailto: zdravniki@gmail.com">Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="zdravnik.js"></script>
+        <script src="en_zdravnik.js"></script>        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>

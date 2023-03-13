@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&display=swap');
+
+body {
+    font-family: "Dosis", sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size:14px;
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#hero {
+    background-image: url("../Slike/cover.jpg");
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.overlay::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(36, 44, 51, 0.6);
+    z-index: -1;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: #2f93b1;
+    border-color: rgb(47, 147, 177);
+    /*border-radius: 100px;*/
+}
+
+.btn-primary:hover {
+    background-color: rgb(37, 118, 143);
+    border-color: rgb(37, 118, 143);
+}
+
+.intro .divider {
+    background-color: rgb(47, 147, 177);
+    height: 2px;
+    width: 120px;
+    margin: 18px auto;
+}
+
+.intro {
+    margin-bottom: 50px;
+}
+
+.logo {
+    width: 30px;
+}
+
+.info {
+    width: 80px;
+    padding-bottom: 15px;
+}
+
+#milestone {
+    background-image: url("../Slike/cover.jpg");
+    
+}
+
+.counter .number {
+    line-height: 1;
+}
+
+.counter .divider{
+    width: 80px;
+    height: 2px;
+    background-color: rgb(47, 147, 177);
+    margin: 18px auto;
+}
+
+.login {
+    background-color: rgb(47, 147, 177);
+}
+
+.login ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.login li{
+    margin-top: 10px;
+}
+
+.btn-light {
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    border-radius: 100px;
+}
+
+.btn-light:hover {
+    background-color: rgb(214, 214, 214);
+    border-color: rgb(214, 214, 214);
+}
+
+footer a{
+    color:#eeeeee;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: rgb(47, 147, 177);
+}
+
+.search {
+    width: 180px;
+}
+
+.box1 {
+    background-color: #eeeeee; 
+
+}
+
+.box2 {
+    background-color: #eeeeee;
+}
+
+/*.btn-success {
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    color: rgb(34, 34, 34);
+}
+
+.btn-success:hover {
+    background-color: rgb(214, 214, 214);
+    border-color: rgb(214, 214, 214);
+
+}*/
+
+label {
+    padding-left: 20px;
+}
+
+.gumb {
+    margin-left: 40px;
+}
+
+#intro {
+    background-image: url("../Slike/cover.jpg");
+}
+
+.info-box li{
+    justify-content: left;
+    list-style-type: none;
+    padding: 5px;
+    
+}
+
+.info-box {
+    background-color: #2f93b1;
+}
+
+
+
+.card-img-left {
+    width: 45%;
+}
+  
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.list-group-item{
+
+    font-weight: 600;
+    font-size:14px;
+}
+
+.chead{
+    background-color: #d0e5ff;
+    padding: 5px;
+    
+}
+.text{
+    background-color: rgb(189, 221, 255);
+    padding: 10px;
+    font-size:15px;
+}
+.name{
+    font-size:14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.cajt{
+    font-size:14px;
+}
+
+.box li{
+    justify-content: left;
+    list-style-type: none;
+    padding: 5px;
+    
+}
+
+#zdravnik a{
+    text-decoration: none;
+    color: #2f93b1;
+}
+
+#zdravnik a:hover{
+    text-decoration: none;
+    color: #27748b;
+}
+
+#tabelaZdravnikov a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+
+}
+
+#tabelaZdravnikov a:hover{
+
+    color: rgb(64, 99, 211);
+
+}
+
+.aBtn {
+    color: black;
+    text-decoration: none;
+}
+
+.aBtn:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+#map {
+    width: 600px;
+    height: 400px;
+    display: inline-block;
+}
+.media {
+    padding-bottom: 15px;
+}
+.cajt {
+    text-align: end;
+    padding: 5px;
+}
+
+.leaflet-control-attribution {
+    display: none;
+}
+
+
